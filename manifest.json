@@ -1,21 +1,17 @@
 {
-    "manifest_version": 2,
-    "name": "My Plugin",
-    "version": "1.0",
-    "description": "Опис мого плагіну",
-    "icons": {
-      "16": "icon_16.png",
-      "48": "icon_48.png",
-      "128": "icon_128.png"
-    },
-    "browser_action": {
-      "default_title": "My Plugin",
-      "default_popup": "popup.html"
-    },
-    "web_accessible_resources": [
-      "index.html",
-      "target/wasm32-unknown-unknown/release/my_plugin.wasm",
-      "target/wasm32-unknown-unknown/release/my_plugin.js"
-    ]
+  "name": "Hello Plugin",
+	"content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-pFtkqQKN85xxiMcTSkNk/UqGHqC9RVZuWpX3+s6+shs=' ; object-src 'self'",
+	
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Displays 'Hello' message on button click",
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "permissions": ["activeTab", "tabs", "unsafe-eval"],
+  "browser_action": {
+    "default_icon": "icon_128.png",
+    "default_popup": "popup.html"
   }
+}
   

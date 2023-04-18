@@ -7,6 +7,15 @@
   </head>
   <body>
     <h1>My Plugin</h1>
-    <button id="my-button">Натисни мене!</button>
+    <div id="content"></div>
+    <button id="myButton">Click me!</button>
+    <script type="module">
+      import init, { my_plugin_function } from "./pkg/my_plugin.js";
+      init().then(() => {
+        document.getElementById("myButton").onclick = function() {
+          my_plugin_function();
+        };
+      });
+    </script>
   </body>
 </html>
