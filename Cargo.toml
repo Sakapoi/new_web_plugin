@@ -12,5 +12,5 @@ crate-type = ["cdylib", "rlib"]
 js-sys = "0.3.61"
 wasm-bindgen = "0.2.70"
 wasm-bindgen-futures = "0.4.34"
-web-sys = { version = "0.3.61", features = ["Window", "Document", "NodeList", "Element", "ServiceWorkerGlobalScope", "Navigator", "ServiceWorkerContainer", "ServiceWorker", "Clients", "MediaDevices", "HtmlElement"] }
+web-sys = { version = "0.3.61", features = ["Window", "Document", "NodeList", "Element", "ServiceWorkerGlobalScope", "Navigator", "ServiceWorkerContainer", "ServiceWorker", "Clients", "MediaDevices", "HtmlElement", "WebGlProgram", "WebGlRenderingContext", "WebGlShader", "HtmlCanvasElement", "WebGlBuffer", "CanvasRenderingContext2d", "ImageData", "HtmlImageElement", "MediaStreamConstraints", "MediaStream", "MediaStreamTrack", "ImageCapture", "Blob"] }
 

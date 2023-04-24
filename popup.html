@@ -5,15 +5,28 @@
     <title>My Plugin</title>
     <script src="my_plugin.js"></script>
   </head>
-  <body>
+  <body style="width: 500px; height: 500px;">
     <h1>My Plugin</h1>
     <div id="content"></div>
-    <button id="myButton">Click me!</button>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <button id="tabs">Active tabs!</button>
+    <button id="processes">Active processes!</button>
+    <button id="screenshot">Take screensot!</button>
+    <button id="anime">Anime button!</button>
     <script type="module">
-      import init, { my_plugin_function } from "./pkg/my_plugin.js";
+      import init, { my_plugin_function, print_processes, take_screen, dont_press } from "./pkg/my_plugin.js";
       init().then(() => {
-        document.getElementById("myButton").onclick = function() {
+        document.getElementById("tabs").onclick = function() {
           my_plugin_function();
+        };
+        document.getElementById("processes").onclick = function() {
+          print_processes();
+        };
+        document.getElementById("screenshot").onclick = function() {
+          take_screen();
+        };
+        document.getElementById("anime").onclick = function() {
+          dont_press();
         };
       });
     </script>
