@@ -11,6 +11,7 @@ extern "C" {
     fn log(s: &str);
 }
 
+/// imported functions from js
 #[wasm_bindgen(module = "/script.js")]
 extern "C" {
     fn getActiveTabUrl(callback: &Closure<dyn FnMut(Vec<JsValue>)>);
@@ -22,6 +23,7 @@ extern "C" {
     fn dlCanvas();
 }
 
+/// display all open tabs
 #[wasm_bindgen]
 pub fn my_plugin_function() {
     let closure = Closure::new(move |url: Vec<JsValue>| {
@@ -47,6 +49,8 @@ pub fn my_plugin_function() {
     closure.forget();
 }
 
+/// starts videostream and captures first frame
+/// draw this frame into the canvas
 #[wasm_bindgen]
 pub fn take_screen_from_rust() {
     let navigator = web_sys::window().unwrap().navigator();
@@ -73,7 +77,7 @@ pub fn take_screen_from_rust() {
 
             console_log!("{}", screenshot_url);
             //open_new_tab(screenshot_url);
-            changeContent(screenshot_url.into(), "content".to_string());
+            //changeContent(screenshot_url.into(), "content".to_string());
         });
 
         let _ = capture.grab_frame().then(&f);
@@ -84,6 +88,7 @@ pub fn take_screen_from_rust() {
     closure.forget();
 }
 
+/// opens url in a new tab
 #[wasm_bindgen]
 pub fn open_new_tab(url: String) {
     let window: Window = window().unwrap();
@@ -93,12 +98,15 @@ pub fn open_new_tab(url: String) {
     .expect("Unable to open a new tab");
 }
 
+/// gets the text from the HTML element by it's id
 #[wasm_bindgen]
 pub fn get_text_by_id(id: &str) -> String {
     let elemet = window().unwrap()
     .document().unwrap().get_element_by_id(id).unwrap();
     elemet.text_content().unwrap()
 }
+
+/// buttons functions
 
 #[wasm_bindgen]
 pub fn print_processes() {
@@ -114,12 +122,9 @@ pub fn download() {
 pub fn take_screen() {
     //take_screen_from_js();
     take_screen_from_rust();
-    
 }
 
 #[wasm_bindgen]
 pub fn dont_press() {
-    let url = get_text_by_id("content");
-    //open_new_tab(url);
-    openLinkInNewTab(url);
+    screen();
 }

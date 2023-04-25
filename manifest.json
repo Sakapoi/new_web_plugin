@@ -1,10 +1,10 @@
 {
-  "name": "Hello Plugin",
+  "name": "Rust Plugin",
 	"content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-/TR/+eNA9CSpNtKtLaYtzG0kL6PWWrLgqaYi2wjAg+Y=' ; object-src 'self'",
 	
   "version": "1.0",
   "manifest_version": 2,
-  "description": "Displays 'Hello' message on button click",
+  "description": "Plugin in Rust",
   "icons": {
     "128": "icon_128.png"
   },

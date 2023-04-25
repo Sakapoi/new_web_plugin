@@ -1,32 +1,20 @@
 <!DOCTYPE html>
-<html class="h-full">
+<html>
   <head>
     <meta charset="utf-8">
     <title>My Plugin</title>
+    <link rel="stylesheet" href="style.css">
     <script src="my_plugin.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100 h-full flex flex-col items-center justify-center">
-    <h1 class="text-3xl font-bold mb-6">My Plugin</h1>
-    <div id="content" class="bg-white shadow-lg p-6 rounded-lg mb-6"></div>
-    <canvas id="myCanvas" class="bg-white shadow-lg rounded-lg mb-6" width="500" height="500"></canvas>
-    <div class="flex justify-center space-x-4 mb-6">
-      <button id="tabs" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Active tabs!
-      </button>
-      <button id="processes" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Active processes!
-      </button>
-      <button id="screenshot" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Take screenshot!
-      </button>
-      <button id="anime" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Anime button!
-      </button>
-    </div>
-    <a id="dl" download="Canvas.png" href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-      Download Canvas
-    </a>
+  <body style="width: 800px; height: 500px;">
+    <h1>My Plugin</h1>
+    <div id="content"></div>
+    <canvas id="myCanvas"></canvas><br>
+    <button id="tabs">Active tabs!</button>
+    <button id="processes">Active processes!</button>
+    <button id="screenshot">Take screensot!</button>
+    <button id="anime">Anime button!</button>
+    <a id="dl" download="Canvas.png" href="#">Download Canvas</a>
     <script type="module">
       import init, { my_plugin_function, print_processes, take_screen, dont_press, download } from "./pkg/my_plugin.js";
       init().then(() => {

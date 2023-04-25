@@ -1,0 +1,44 @@
+/* Встановлення меж елементів та відступу від країв вікна браузера */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Приклад додавання фону для заголовку */
+  h1 {
+    background-color: #edf2f7;
+    padding: 1rem;
+  }
+  
+  /* Застосування Tailwind CSS до кнопок */
+  button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background-color: #4299e1;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  /* Застосування Tailwind CSS до посилання на завантаження зображення */
+  #dl {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background-color: #4299e1;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Додавання стилю до елемента div з ідентифікатором content */
+  #content {
+    padding: 1rem;
+    background-color: #f7fafc;
+    margin: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  }
