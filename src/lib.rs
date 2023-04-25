@@ -19,6 +19,7 @@ extern "C" {
     fn screen();
     fn take_screen_from_js();
     fn openLinkInNewTab(url: String);
+    fn dlCanvas();
 }
 
 #[wasm_bindgen]
@@ -102,6 +103,11 @@ pub fn get_text_by_id(id: &str) -> String {
 #[wasm_bindgen]
 pub fn print_processes() {
     listProcesses();
+}
+
+#[wasm_bindgen]
+pub fn download() {
+    dlCanvas();
 }
 
 #[wasm_bindgen]

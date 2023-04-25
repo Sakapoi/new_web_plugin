@@ -7,7 +7,7 @@ export function getActiveTabUrl(callback) {
 
 export function openLinkInNewTab(url) {
   document.getElementById("anime").addEventListener("click", function(event) {
-    event.preventDefault(); // зупинка дії за замовчуванням
+    event.preventDefault();
     window.open(url, '_blank');
   });
 }
@@ -27,7 +27,6 @@ export function listProcesses() {
 
 export function screen() {
   chrome.tabs.create({ url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" }, function(tab) {
-    // Виконуємо скріпт на сторінці
     chrome.tabs.executeScript(tab.id, { takeScreenshotAndCopyToClipboard });
   });
 }
@@ -57,4 +56,12 @@ export function take_screen_from_js() {
     });
   })
   .catch(e => console.log(e));
+  console.log("karta");
 }
+
+export function dlCanvas() {
+  var canvas = document.getElementById("myCanvas");
+  var imageUrl = canvas.toDataURL();
+  console.log('url:', imageUrl);
+  document.getElementById('dl').href = imageUrl;
+};
