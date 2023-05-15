@@ -7,6 +7,8 @@ This extension was written in Rust and compiled to WASM to use the Rust function
 I used a `wasm-bindgen` crate to compile functions from Rust module into a wasm file. 
 I also used a `web-sys` crate to get the information about the URLs of all opened tabs of the browser. With a help of the `web-sys` crate I also created a canvas to draw an image with the screenshot there.
 
+With this extension, you can take a screenshot of any tab, window, or even the entire screen. It's also very easy to use.
+
 ## How to run
 
 1. Install [Rust](https://rustup.rs/)
@@ -23,8 +25,6 @@ RUSTFLAGS=--cfg=web_sys_unstable_apis wasm-pack build --target web
 
 ## Example
 
-Here is an example of selecting a file to screen:
-![res](Images/Plugin.png)
+Here is an example of taking a screenshot of a tab:
 
-And the result screenshot in the file:
-![res](Images/ScreenshotFile.png)
+![res](Images/screenshot_gif.gif)
