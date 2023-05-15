@@ -4,6 +4,8 @@
 In this project, I developed a simple Google Chrome extension that prints the URLs of all opened tabs of the browser in the extension HTML window, when the button of the extension is pressed. This extension also takes the screenshot of a selected file and displays this screenshot in the HTML window. Extension has a button to download the screenshot in the png file.
 This extension was written in Rust and compiled to WASM to use the Rust functions in the Javascript module of the extension later. 
 
+In this project all Rust functions are in the src folder, they perform the main logic of a plugin. manifest.json is the file with all settings of the plugin and is the first file that our browser sees after installing the plugin. popup.html is a file with HTML markup of a plugin window. In `style.css` there is a style for this HTML window. And the script.js file contains Javascript functions that are exported into Rust.
+
 I used a `wasm-bindgen` crate to compile functions from Rust module into a wasm file. 
 I also used a `web-sys` crate to get the information about the URLs of all opened tabs of the browser. With a help of the `web-sys` crate I also created a canvas to draw an image with the screenshot there.
 
