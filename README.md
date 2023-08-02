@@ -30,3 +30,10 @@ RUSTFLAGS=--cfg=web_sys_unstable_apis wasm-pack build --target web
 Here is an example of taking a screenshot of a tab:
 
 ![res](Images/screenshot_gif.gif)
+
+## Useful links
+
+1. Compilation to Wasm: https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_Wasm
+1. Creating a plugin for Chrome: https://www.freecodecamp.org/news/write-your-own-browser-extensions/
+1. Crate documentation: https://rustwasm.github.io/wasm-bindgen/introduction.html
+
